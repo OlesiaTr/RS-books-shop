@@ -1,0 +1,64 @@
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(300px, 1fr));
+  grid-gap: 30px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  max-width: calc(100vw - 90px);
+  margin-left: 120px;
+  margin-right: 120px;
+}
+
+.gallery__item {
+  width: 393px;
+  margin-bottom: 30px;
+}
+
+.gallery__img {
+  height: 574px;
+  object-fit: cover;
+  transition: transform 0.15s linear;
+  margin-bottom: 15px;
+}
+
+.gallery__img:hover,
+.gallery__img:focus {
+  cursor: zoom-in;
+  transform: scale(1.03);
+}
+
+.gallery__title {
+  font-family: "Lora", serif;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.gallery__author {
+  font-size: 22px;
+}
+
+.gallery__price {
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.gallery__btn {
+  font-family: "Noto Sans", sans-serif;
+  color: #02354d;
+  letter-spacing: 2px;
+  background: transparent;
+  border: 1px solid #979797;
+  border-radius: 50px;
+  display: inline-block;
+  padding: 15px 30px;
+  text-transform: uppercase;
+  transition: 0.3s ease 0s;
+}
+
+.gallery__btn:hover,
+.gallery__btn:focus {
+  background-color: #14699b;
+  border: 1px solid #14699b;
+  color: #fff;
+}
