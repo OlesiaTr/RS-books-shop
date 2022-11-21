@@ -4,8 +4,12 @@
   --main-basic-grey: #979797;
   --main-dark-blue: #02354d;
   --main-bcg-grey: #e5e5e5;
+  --header-footer: #1e2939;
   /* accent color pallete */
   --accent-dark-blue: #14699b;
   --accent-orange: #fb6d3a;
   /* font families */
+  --Lora: "Lora", serif;
+  --Philosopher: "Philosopher", sans-serif;
+  --Noto: "Noto Sans", sans-serif;
 }

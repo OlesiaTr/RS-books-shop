@@ -1,6 +1,8 @@
 // import { refs, galleryContainer, galleryList } from "./js_partials/refs.js";
 import { galleryMarkup } from "./js_partials/galleryMarkup.js";
+import headerMarkup from "./js_partials/header.js";
 
+headerMarkup();
 fetchingBooks();
 
 function fetchingBooks() {
@@ -9,5 +11,3 @@ function fetchingBooks() {
     .then((data) => galleryMarkup(data))
     .catch((error) => console.log(error));
 }
-
-

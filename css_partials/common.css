@@ -3,7 +3,7 @@ html {
 }
 
 body {
-  font-family: "Philosopher", sans-serif;
+  font-family: var(--Philosopher);
   font-size: 16px;
   line-height: 1.7;
   letter-spacing: 0.03em;
@@ -25,8 +25,13 @@ ul,
 ol {
   margin: 0;
   padding-left: 0;
+  list-style: none;
 }
 
 button {
   cursor: pointer;
+}
+
+a {
+  text-decoration: none;
 }
