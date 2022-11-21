@@ -1,0 +1,50 @@
+.header {
+  background-color: var(--header-footer);
+}
+
+.header__section {
+  padding-top: 32px;
+  padding-bottom: 32px;
+  margin: 0 120px;
+
+  display: flex;
+  justify-content: space-between;
+}
+.header__title {
+  font-size: 36px;
+}
+
+.header__logo {
+  font-family: var(--Noto);
+  color: var(--main-basic-white);
+}
+
+.header__logo--accent {
+  color: var(--accent-orange);
+}
+
+.cart-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.cart__title {
+  font-family: var(--Philosopher);
+  font-size: 32px;
+  color: var(--main-basic-white);
+  margin-right: 10px;
+}
+
+.cart__btn {
+  background-color: transparent;
+  border: none;
+}
+
+.cart__icon {
+  fill: var(--accent-orange);
+}
+.cart__item-counter {
+  color: var(--main-basic-white);
+  font-size: 18px;
+}

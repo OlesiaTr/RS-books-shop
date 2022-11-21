@@ -1,0 +1,54 @@
+.form__container {
+  padding: 40px;
+  width: 80vw;
+  margin: 0 auto;
+}
+
+.form {
+  text-align: center;
+}
+.form__shipping {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+.form__title {
+}
+.form__input-wrap {
+}
+.form__input {
+}
+.form__delivery-date {
+}
+.form__address {
+  display: flex;
+  justify-content: space-between;
+}
+.form__street {
+}
+.form__house-number {
+}
+.form__apartment-number {
+}
+.form__payment {
+  display: flex;
+  flex-direction: column;
+}
+.form__input-wrap--radio {
+}
+.form__gifts {
+}
+.form__input-wrap--checkbox {
+  display: flex;
+  justify-content: space-between;
+}
+.form__comment {
+  display: flex;
+  flex-direction: column;
+}
+.form__comment-area {
+}
+.form__textarea {
+}
+.form__submit-btn {
+}
