@@ -9,3 +9,5 @@ function fetchingBooks() {
     .then((data) => galleryMarkup(data))
     .catch((error) => console.log(error));
 }
+
+

@@ -1,6 +1,6 @@
 .gallery {
   display: grid;
-  grid-template-columns: repeat(4, minmax(300px, 1fr));
+  grid-template-columns: repeat(3, minmax(300px, 1fr));
   grid-gap: 30px;
   padding: 0;
   margin: 0;
@@ -11,7 +11,7 @@
 }
 
 .gallery__item {
-  width: 393px;
+  width: 435px;
   margin-bottom: 30px;
 }
 
@@ -32,23 +32,26 @@
   font-family: "Lora", serif;
   margin: 0;
   margin-bottom: 10px;
+  color: var(--accent-orange);
 }
 
 .gallery__author {
   font-size: 22px;
+  color: var(--main-dark-blue);
 }
 
 .gallery__price {
   margin-bottom: 10px;
   font-size: 20px;
+  color: var(--main-dark-blue);
 }
 
 .gallery__btn {
   font-family: "Noto Sans", sans-serif;
-  color: #02354d;
+  color: var(--main-dark-blue);
   letter-spacing: 2px;
   background: transparent;
-  border: 1px solid #979797;
+  border: 1px solid var(--main-basic-grey);
   border-radius: 50px;
   display: inline-block;
   padding: 15px 30px;
@@ -58,7 +61,7 @@
 
 .gallery__btn:hover,
 .gallery__btn:focus {
-  background-color: #14699b;
-  border: 1px solid #14699b;
-  color: #fff;
+  background-color: var(--accent-dark-blue);
+  border: 1px solid var(--accent-dark-blue);
+  color: var(--main-basic-white);
 }

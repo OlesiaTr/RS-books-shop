@@ -13,7 +13,89 @@
 </head>
 
 <body>
+    <section class="form__container">
+        <form class="form">
+            <div class="form__shipping">
+                <label for="first-name">First
+                    <div class="form__input-wrap">
+                        <input type="text" name="first-name" id="first-name" placeholder="Your name" class="form__input"
+                            required autofocus autocomplete="off" minlength="4">
+                    </div>
+                </label>
+                <label for="last-name">Last
+                    <div class="form__input-wrap">
+                        <input type="text" name="last-name" id="last-name" placeholder="Your surname"
+                            class="form__input" required autocomplete="off" minlength="5">
+                    </div>
+                </label>
+                <label for="delivery-date">Delivery Date
+                    <div class="form__input-wrap">
+                        <input type="date" name="delivery-date" id="delivery-date" class="form__delivery-date" required
+                            autocomplete="off">
+                    </div>
+                </label>
+                <h2 class="form__title">Shipping Details</h2>
 
+            </div>
+            <div class="form__address">
+                <h2 class="form__title">Address</h2>
+                <label for="street">Street
+                    <div class="form__input-wrap">
+                        <input type="text" name="street" id="street" placeholder="Street name" class="form__street"
+                            required autocomplete="off" minlength="5">
+                    </div>
+                </label>
+                <label for="house-number">House
+                    <div class="form__input-wrap">
+                        <input type="text" name="house-number" id="house-number" placeholder="House number"
+                            class="form__house-number" required autocomplete="off">
+                    </div>
+                </label>
+                <label for="apartment-number">Apartment
+                    <div class="form__input-wrap">
+                        <input type="text" name="apartment-number" id="apartment-number" placeholder="Apartment number"
+                            class="form__apartment-number" required autocomplete="off">
+                    </div>
+                </label>
+            </div>
+            <div class="form__payment">
+                <h2 class="form__title">Payment Information</h2>
+                <div class="form__input-wrap--radio">
+                    <label for="card">Card</label>
+                    <input type="radio" name="payment" id="card" value="card" checked>
+
+                    <label for="cash">Cash</label>
+                    <input type="radio" name="payment" id="cash" value="cash">
+                </div>
+            </div>
+            <div class="form__gifts">
+                <h2 class="form__title">Choose 2 gifts (optional):</h2>
+                <div class="form__input-wrap--checkbox">
+                    <label for="gift">
+                        <input type="checkbox" name="gift" id="gift" value="form-gift">pack as a gifts</label>
+
+                    <label for="postcard">add postcard
+                        <input type="checkbox" name="postcard" id="postcard" value="form-gift"></label>
+                </div>
+                <div class="form__input-wrap--checkbox">
+                    <label for="discount">
+                        <input type="checkbox" name="discount" id="discount" value="form-gift">provide 2% discount for
+                        the next purchase</label>
+
+                    <label for="pen">branded pen or pencil
+                        <input type="checkbox" name="pen" id="pen" value="form-gift"></label>
+                </div>
+            </div>
+            <div class="form__comment">
+                <h2 class="form__title">Your comment:</h2>
+                <div class="form__comment-area">
+                    <textarea name="comment" id="comment" class="form__textarea" cols="30" rows="10"
+                        placeholder="Enter your comment, if you have one"></textarea>
+                </div>
+            </div>
+            <button class="form__submit-btn" type="submit" disabled>Purchase</button>
+        </form>
+    </section>
 </body>
 
 </html>
