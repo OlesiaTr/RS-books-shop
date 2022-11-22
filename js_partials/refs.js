@@ -24,4 +24,13 @@ const galleryRefs = {
   list: document.createElement("ul"),
 };
 
-export { refs, galleryRefs, headerRefs, cartRefs };
+const modalRefs = {
+  // container: new DocumentFragment(),
+  bgContainer: document.createElement("div"),
+  modalContainer: document.createElement("div"),
+  img: document.createElement("img"),
+  desc: document.createElement("p"),
+  btn: document.createElement("button"),
+};
+
+export { refs, galleryRefs, headerRefs, cartRefs, modalRefs };

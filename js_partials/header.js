@@ -2,7 +2,6 @@ import { refs, headerRefs, cartRefs } from "./refs.js";
 
 export default function headerMarkup() {
   cartRefs.counter.classList.add("cart__item-counter");
-  cartRefs.counter.innerHTML = 4;
 
   const svg = `<svg width="40" height="40" aria-label="Toggles cart">
                         <use class="cart__icon" href="./imgs/symbol-defs.svg#icon-cart"></use>
