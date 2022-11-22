@@ -1,4 +1,5 @@
 const refs = {
+  body: document.querySelector("body"),
   header: document.querySelector("header"),
   main: document.querySelector("main"),
   draggables: document.querySelectorAll(".draggable"),
@@ -24,4 +25,14 @@ const galleryRefs = {
   list: document.createElement("ul"),
 };
 
-export { refs, galleryRefs, headerRefs, cartRefs };
+const modalRefs = {
+  container: new DocumentFragment(),
+  bgContainer: document.createElement("div"),
+  modalContainer: document.createElement("div"),
+  img: document.createElement("img"),
+  desc: document.createElement("p"),
+  btn: document.createElement("button"),
+  wrap: document.createElement("div"),
+};
+
+export { refs, galleryRefs, headerRefs, cartRefs, modalRefs };

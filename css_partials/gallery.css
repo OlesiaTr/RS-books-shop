@@ -65,7 +65,8 @@
   display: flex;
   justify-content: space-between;
   border-top: 1px solid var(--main-dark-blue);
-  padding-top: 10px;
+  border-bottom: 1px solid var(--main-dark-blue);
+  padding: 10px 0;
 }
 
 .gallery__btn {

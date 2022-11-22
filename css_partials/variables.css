@@ -12,4 +12,6 @@
   --Lora: "Lora", serif;
   --Philosopher: "Philosopher", sans-serif;
   --Noto: "Noto Sans", sans-serif;
+  /* transition on hover */
+  --transition: 350ms cubic-bezier(0.4, 0, 0.2, 1);
 }
