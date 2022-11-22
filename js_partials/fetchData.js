@@ -1,4 +1,4 @@
-import { galleryMarkup } from "./galleryMarkup.js";
+import { galleryMarkup } from "./markup.js";
 
 const fetchingBooks = async () => {
   const response = await fetch("./js_partials/books.json");

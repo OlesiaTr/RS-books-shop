@@ -1,4 +1,5 @@
 const refs = {
+  body: document.querySelector("body"),
   header: document.querySelector("header"),
   main: document.querySelector("main"),
   draggables: document.querySelectorAll(".draggable"),
@@ -25,12 +26,13 @@ const galleryRefs = {
 };
 
 const modalRefs = {
-  // container: new DocumentFragment(),
+  container: new DocumentFragment(),
   bgContainer: document.createElement("div"),
   modalContainer: document.createElement("div"),
   img: document.createElement("img"),
   desc: document.createElement("p"),
   btn: document.createElement("button"),
+  wrap: document.createElement("div"),
 };
 
 export { refs, galleryRefs, headerRefs, cartRefs, modalRefs };

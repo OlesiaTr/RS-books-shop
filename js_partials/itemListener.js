@@ -1,5 +1,6 @@
 import { cartRefs } from "./refs.js";
 import { books } from "./books.js";
+import { bookInfoMarkup } from "./markup.js";
 
 const LOCALSTORAGE_KEY = "books-in-cart";
 const bookID = [];
@@ -12,12 +13,22 @@ const counterValue = {
 };
 
 function onClick(e) {
-  if (e.target.classList.contains("add-btn")) {
+  if (
+    e.target.classList.contains("add-btn") ||
+    e.target.classList.contains("info__btn")
+  ) {
     const bookEl = e.target.closest(".gallery__item");
     const bookId = bookEl.id;
     const bookObj = books.find((book) => book.id == bookId);
     onIncrement(bookObj);
     addBookToCart(bookObj, cart);
+  }
+
+  if (e.target.classList.contains("show-btn")) {
+    const bookEl = e.target.closest(".gallery__item");
+    const bookId = bookEl.id;
+    const bookObj = books.find((book) => book.id == bookId);
+    bookInfoMarkup(bookObj, bookEl);
   }
 }
 
@@ -34,8 +45,7 @@ function addBookToCart(book, cart) {
 
   localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(cart));
 
-  console.log(cart);
-  // renderCart(cart);
+  // cartMarkup(cart);
 }
 
 export { onClick };
