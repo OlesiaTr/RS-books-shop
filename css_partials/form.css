@@ -6,12 +6,22 @@
 
 .form {
   text-align: center;
-}
-.form__shipping {
   display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 60vw;
+}
+.form__shipping,
+.form__address {
+  display: flex;
+  align-items: center;
   justify-content: space-between;
+}
+
+.form__shipping {
   flex-direction: row;
 }
+
 .form__title {
 }
 .form__input-wrap {
@@ -20,10 +30,7 @@
 }
 .form__delivery-date {
 }
-.form__address {
-  display: flex;
-  justify-content: space-between;
-}
+
 .form__street {
 }
 .form__house-number {
@@ -49,6 +56,13 @@
 .form__comment-area {
 }
 .form__textarea {
+  height: 15vw;
+  width: 45vw;
 }
 .form__submit-btn {
+}
+
+.form__input-wrap input {
+  padding: 15px;
+  width: 300px;
 }

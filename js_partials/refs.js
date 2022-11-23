@@ -35,4 +35,20 @@ const modalRefs = {
   wrap: document.createElement("div"),
 };
 
-export { refs, galleryRefs, headerRefs, cartRefs, modalRefs };
+const storeRefs = {
+  container: new DocumentFragment(),
+  bgContainer: document.createElement("div"),
+  modalContainer: document.createElement("div"),
+  list: document.createElement("ul"),
+  img: document.createElement("img"),
+  wrap: document.createElement("div"),
+  author: document.createElement("p"),
+  title: document.createElement("p"),
+  price: document.createElement("p"),
+  wrapBtn: document.createElement("div"),
+  orderBtn: document.createElement("a"),
+  clearBtn: document.createElement("button"),
+  total: document.createElement("p"),
+};
+
+export { refs, galleryRefs, headerRefs, cartRefs, modalRefs, storeRefs };

@@ -61,7 +61,6 @@
 }
 
 .info__desc {
-  /* font-family: var(--Philosopher); */
   font-size: 20px;
   margin-bottom: auto;
 }
@@ -72,7 +71,4 @@
   align-items: stretch;
   flex-direction: column;
   height: 475px;
-}
-
-.info__btn {
 }

@@ -1,5 +1,12 @@
-import { refs, galleryRefs, headerRefs, cartRefs, modalRefs } from "./refs.js";
-import { modalWindow } from "./modal.js";
+import {
+  refs,
+  galleryRefs,
+  headerRefs,
+  cartRefs,
+  modalRefs,
+  storeRefs,
+} from "./refs.js";
+import { infoModal, cartModal } from "./modal.js";
 
 refs.main.classList.add("main");
 galleryRefs.list.classList.add("gallery");
@@ -13,7 +20,7 @@ const headerMarkup = () => {
 
   cartRefs.btn.classList.add("cart__btn");
   cartRefs.btn.type = "button";
-  cartRefs.btn.dataset.menuButton = "";
+  cartRefs.btn.dataset.cartOpen = "";
   cartRefs.btn.insertAdjacentHTML("beforeend", svg);
   cartRefs.btn.appendChild(cartRefs.counter);
 
@@ -99,7 +106,72 @@ const bookInfoMarkup = (book, item) => {
 
   item.childNodes[5].appendChild(modalRefs.container);
   refs.body.classList.add("no-scroll");
-  modalWindow();
+  infoModal();
 };
 
-export { headerMarkup, galleryMarkup, bookInfoMarkup };
+const cartMarkup = (cart) => {
+  const itemMarkup = [...cart]
+    .map((item) => {
+      return `            <li class="cart__item" id=${item.id}>
+                <img src="${item.imageLink}" alt="${item.title}" class="cart__img">
+                <div class="cart__wrap">
+                    <p class="cart__author">${item.author}</p>
+                    <p class="cart__book-title">${item.title}</p>
+                    <p class="cart__price">${item.price}</p>
+                </div>
+                <button class="cart__close--btn">
+                    <svg width="40px" height="40px">
+                        <use href="./imgs/symbol-defs.svg#icon-close" class="cart__close--icon"></use>
+                    </svg>
+                </button>
+            </li>`;
+    })
+    .join(" ");
+
+  const price = [...cart].map((item) => item.price).reduce((a, b) => a + b, 0);
+  console.log(price);
+
+  storeRefs.list.classList.add("cart__list");
+  storeRefs.list.innerHTML = itemMarkup;
+
+  const svgBtn = `<button class="modal__close--btn" data-cart-close>
+              <svg  width="40px" height="40px">
+                  <use href="./imgs/symbol-defs.svg#icon-close" class="modal__close--icon"></use>
+              </svg>
+          </button>`;
+
+  storeRefs.clearBtn.classList.add("gallery__btn", "cart__btn");
+  storeRefs.clearBtn.type = "button";
+  storeRefs.clearBtn.innerText = "Clear all";
+
+  storeRefs.orderBtn.classList.add("gallery__btn", "cart__link");
+  storeRefs.orderBtn.href = "./form.html";
+  storeRefs.orderBtn.innerText = "Confirm order";
+
+  storeRefs.wrapBtn.classList.add("cart__wrap--btn");
+  storeRefs.wrapBtn.append(storeRefs.orderBtn, storeRefs.clearBtn);
+
+  storeRefs.total.classList.add("cart__total");
+  storeRefs.total.innerText = `Total sum: ${price}`;
+
+  storeRefs.modalContainer.classList.add("modal", "cart__modal");
+  storeRefs.modalContainer.innerHTML = svgBtn;
+  storeRefs.modalContainer.append(
+    storeRefs.total,
+    storeRefs.list,
+    storeRefs.wrapBtn
+  );
+
+  storeRefs.bgContainer.classList.add("modal__bg");
+  storeRefs.bgContainer.dataset.cartInfo = "";
+  storeRefs.bgContainer.append(storeRefs.modalContainer);
+
+  storeRefs.container.append(storeRefs.bgContainer);
+
+  cartRefs.btn.append(storeRefs.container);
+  refs.body.classList.add("no-scroll");
+
+  cartModal();
+};
+
+export { headerMarkup, galleryMarkup, bookInfoMarkup, cartMarkup };

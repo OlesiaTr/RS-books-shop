@@ -40,6 +40,9 @@
   background-color: transparent;
   border: none;
 }
+.cart__btn svg {
+  pointer-events: none;
+}
 
 .cart__icon {
   fill: var(--accent-orange);
