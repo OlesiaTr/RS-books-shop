@@ -1,0 +1,94 @@
+.cart__modal {
+  width: 1000px;
+  height: 800px;
+  display: flex;
+  flex-direction: column;
+}
+
+.cart__total {
+  font-family: --Noto;
+  text-transform: uppercase;
+  font-size: 36px;
+  letter-spacing: 2px;
+  text-decoration: wavy 2px var(--accent-orange) line-through;
+  color: var(--main-dark-blue);
+}
+
+.cart__list {
+  height: 650px;
+  overflow-y: auto;
+}
+
+.cart__item {
+  display: flex;
+  align-items: center;
+  height: 200px;
+  margin-bottom: 10px;
+}
+
+.cart__wrap {
+  display: flex;
+  justify-content: space-evenly;
+  width: 500px;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.cart__img {
+  width: 150px;
+  margin-right: 20px;
+}
+
+.cart__close--btn {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  top: 8px;
+  right: 8px;
+  border: 3px inset var(--accent-orange);
+  background-color: transparent;
+  transition: border var(--transition), fill var(--transition);
+}
+
+.cart__close--btn:hover,
+.cart__close--btn:focus {
+  border: outset var(--main-dark-blue);
+}
+
+.cart__close--icon {
+  fill: var(--accent-orange);
+}
+
+.cart__close--btn:hover .cart__close--icon,
+.cart__close--btn:focus .cart__close--icon {
+  fill: var(--main-dark-blue);
+}
+
+.cart__author,
+.cart__book-title,
+.cart__price {
+  padding: 10px;
+  font-size: 20px;
+}
+
+.cart__author {
+}
+
+.cart__book-title {
+  width: 350px;
+}
+
+.cart__price {
+}
+
+.cart__wrap--btn {
+  display: flex;
+  margin-top: auto;
+}
+
+.cart__link {
+  margin-right: 30px;
+}

@@ -1,8 +1,6 @@
 import { onClick } from "./itemListener.js";
 
-// galleryRefs.list.addEventListener("click", onClick);
-
-const modalWindow = () => {
+const infoModal = () => {
   const refs = {
     openModalBtn: document.querySelectorAll("[data-modal-info-open]"),
     closeModalBtn: document.querySelector("[data-modal-info-close]"),
@@ -32,4 +30,27 @@ const modalWindow = () => {
   }
 };
 
-export { modalWindow };
+const cartModal = () => {
+  const refs = {
+    openModalBtn: document.querySelector("[data-cart-open]"),
+    closeModalBtn: document.querySelector("[data-cart-close]"),
+    modal: document.querySelector("[data-cart-info]"),
+    body: document.querySelector("body"),
+  };
+
+  refs.openModalBtn.addEventListener("click", onOpenModal);
+  refs.closeModalBtn.addEventListener("click", onCloseModal);
+
+  function onOpenModal(e) {
+    refs.modal.classList.toggle("is-hidden");
+    refs.body.classList.toggle("no-scroll");
+  }
+
+  function onCloseModal() {
+    refs.modal.classList.toggle("is-hidden");
+    refs.body.classList.toggle("no-scroll");
+    refs.openModalBtn.removeEventListener("click", onOpenModal);
+  }
+};
+
+export { infoModal, cartModal };
