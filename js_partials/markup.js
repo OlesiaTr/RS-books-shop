@@ -109,7 +109,7 @@ const bookInfoMarkup = (book, item) => {
   infoModal();
 };
 
-const cartMarkup = (cart) => {
+const cartMarkup = (cart, e) => {
   const itemMarkup = [...cart]
     .map((item) => {
       return `            <li class="cart__item" id=${item.id}>
@@ -129,7 +129,6 @@ const cartMarkup = (cart) => {
     .join(" ");
 
   const price = [...cart].map((item) => item.price).reduce((a, b) => a + b, 0);
-  console.log(price);
 
   storeRefs.list.classList.add("cart__list");
   storeRefs.list.innerHTML = itemMarkup;
@@ -169,8 +168,9 @@ const cartMarkup = (cart) => {
   storeRefs.container.append(storeRefs.bgContainer);
 
   cartRefs.btn.append(storeRefs.container);
-  refs.body.classList.add("no-scroll");
-
+  // refs.body.classList.add("no-scroll");
+  // storeRefs.bgContainer.classList.add("is-hidden");
+  // console.log(e);
   cartModal();
 };
 

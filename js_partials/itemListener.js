@@ -46,10 +46,12 @@ function addBookToCart(book, cart) {
 
   // cartMarkup(cart);
 
-  cartRefs.btn.addEventListener("click", (e) => {
-    e.preventDefault();
-    cartMarkup(cart);
-  });
+  // const maybethis = (e) => {
+  //   cartMarkup(cart);
+  //   cartRefs.btn.removeEventListener("click", maybethis);
+  // };
+  // cartRefs.btn.addEventListener("click", maybethis);
+  cartRefs.btn.addEventListener("click", (e) => cartMarkup(cart, e));
 }
 
 export { onClick };

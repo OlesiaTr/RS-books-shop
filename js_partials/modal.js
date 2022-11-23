@@ -17,11 +17,15 @@ const infoModal = () => {
   refs.closeModalBtn.addEventListener("click", onCloseModal);
 
   function onOpenModal(e) {
+    console.log(e.target);
+
     refs.modal.classList.toggle("is-hidden");
     refs.body.classList.toggle("no-scroll");
   }
 
-  function onCloseModal() {
+  function onCloseModal(e) {
+    console.log(e.target);
+
     refs.modal.classList.toggle("is-hidden");
     refs.body.classList.toggle("no-scroll");
     refs.openModalBtn.forEach((item) =>
@@ -38,19 +42,34 @@ const cartModal = () => {
     body: document.querySelector("body"),
   };
 
-  refs.openModalBtn.addEventListener("click", onOpenModal);
-  refs.closeModalBtn.addEventListener("click", onCloseModal);
+  refs.openModalBtn.addEventListener("click", toggleModal);
+  // refs.openModalBtn.removeEventListener("click", onOpenModal);
+  // console.log(refs.openModalBtn);
+  // console.dir(window);
+  refs.closeModalBtn.addEventListener("click", toggleModal);
 
-  function onOpenModal(e) {
+  function toggleModal(e) {
+    // e.preventDefault();
+    console.log(e.currentTarget);
     refs.modal.classList.toggle("is-hidden");
     refs.body.classList.toggle("no-scroll");
+    refs.openModalBtn.removeEventListener("click", toggleModal);
   }
 
-  function onCloseModal() {
-    refs.modal.classList.toggle("is-hidden");
-    refs.body.classList.toggle("no-scroll");
-    refs.openModalBtn.removeEventListener("click", onOpenModal);
-  }
+  // function onOpenModal(e) {
+  //   console.log(e.target);
+  //   console.log(e.currentTarget);
+  //   refs.modal.classList.toggle("is-hidden");
+  //   // refs.body.classList.toggle("no-scroll");
+  //   refs.openModalBtn.removeEventListener("click", onOpenModal);
+  // }
+
+  // function onCloseModal(e) {
+  //   console.log(e.target);
+  //   refs.modal.classList.toggle("is-hidden");
+  //   refs.body.classList.toggle("no-scroll");
+  //   refs.openModalBtn.removeEventListener("click", onOpenModal);
+  // }
 };
 
 export { infoModal, cartModal };
