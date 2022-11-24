@@ -109,7 +109,7 @@ const bookInfoMarkup = (book, item) => {
   infoModal();
 };
 
-const cartMarkup = (cart, e) => {
+const cartMarkup = (cart) => {
   const itemMarkup = [...cart]
     .map((item) => {
       return `            <li class="cart__item" id=${item.id}>
@@ -120,7 +120,7 @@ const cartMarkup = (cart, e) => {
                     <p class="cart__price">${item.price}</p>
                 </div>
                 <button class="cart__close--btn">
-                    <svg width="40px" height="40px">
+                    <svg width="40px" height="40px" class="cart__remove">
                         <use href="./imgs/symbol-defs.svg#icon-close" class="cart__close--icon"></use>
                     </svg>
                 </button>
@@ -167,11 +167,53 @@ const cartMarkup = (cart, e) => {
 
   storeRefs.container.append(storeRefs.bgContainer);
 
-  cartRefs.btn.append(storeRefs.container);
+  // cartRefs.btn.append(storeRefs.container);
+  refs.body.prepend(storeRefs.container);
+
   // refs.body.classList.add("no-scroll");
-  // storeRefs.bgContainer.classList.add("is-hidden");
-  // console.log(e);
+  storeRefs.bgContainer.classList.add("is-hidden");
+
   cartModal();
+
+  document.querySelector(".cart__list").addEventListener("click", (e) => {
+    const LOCALSTORAGE_KEY = "books-in-cart";
+
+    cart = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY)) || [];
+    console.log(cart);
+    console.log(e.target);
+    if (
+      e.target.classList.contains("cart__close--btn") ||
+      e.target.classList.contains("cart__remove")
+    ) {
+      const cartItemEl = e.target.closest(".cart__item");
+      const cartItemId = cartItemEl.id;
+      console.log(cart);
+
+      removeBookFromCart(cartItemId, cart);
+    }
+  });
+
+  document.querySelector(".cart__link").addEventListener("click", (e) => {
+    if (cart.length === 0) {
+      e.preventDefault();
+      alert("Your cart is empty");
+    }
+  });
 };
 
-export { headerMarkup, galleryMarkup, bookInfoMarkup, cartMarkup };
+function removeBookFromCart(id, cart) {
+  console.log(id);
+  console.log(cart);
+  const bookIndex = cart.findIndex((item) => item.id == id);
+  cart.splice(bookIndex, 1);
+  localStorage.setItem("cart", JSON.stringify(cart));
+  renderCart(cart);
+}
+
+export {
+  headerMarkup,
+  galleryMarkup,
+  bookInfoMarkup,
+  cartMarkup,
+  removeBookFromCart,
+};

@@ -16,22 +16,26 @@
     <section class="form__container">
         <form class="form">
             <div class="form__shipping">
-                <label for="first-name">First
+                <label for="firstName">First
                     <div class="form__input-wrap">
-                        <input type="text" name="first-name" id="first-name" placeholder="Your name" class="form__input"
-                            required autofocus autocomplete="off" minlength="4">
+                        <input type="text" name="firstName" id="firstName" placeholder="Your name" class="form__input"
+                            required autofocus minlength="4" pattern="^[a-zA-Z]{4,}$"
+                            pattern-error-message="the length not less than 4 symbols, strings only, without spaces">
+                        <p class="on-error"></p>
                     </div>
                 </label>
-                <label for="last-name">Last
+                <label for="lastName">Last
                     <div class="form__input-wrap">
-                        <input type="text" name="last-name" id="last-name" placeholder="Your surname"
-                            class="form__input" required autocomplete="off" minlength="5">
+                        <input type="text" name="lastName" id="lastName" placeholder="Your surname" class="form__input"
+                            required minlength="5" pattern="^[a-zA-Z]{5,}$"
+                            pattern-error-message="the length not less than 5 symbols, strings only, without spaces">
+                        <p class="on-error"></p>
                     </div>
                 </label>
-                <label for="delivery-date">Delivery Date
+                <label for="deliveryDate">Delivery Date
                     <div class="form__input-wrap">
-                        <input type="date" name="delivery-date" id="delivery-date" class="form__delivery-date" required
-                            autocomplete="off">
+                        <input type="date" name="deliveryDate" id="deliveryDate" class="form__delivery-date" required>
+                        <p class="on-error"></p>
                     </div>
                 </label>
                 <h2 class="form__title">Shipping Details</h2>
@@ -42,19 +46,25 @@
                 <label for="street">Street
                     <div class="form__input-wrap">
                         <input type="text" name="street" id="street" placeholder="Street name" class="form__street"
-                            required autocomplete="off" minlength="5">
+                            required minlength="5" minlength="5" pattern="^[a-zA-Z\s0-9]+$"
+                            pattern-error-message="the length not less than 5 symbols, the numbers are allowed">
+                        <p class="on-error"></p>
                     </div>
                 </label>
-                <label for="house-number">House
+                <label for="houseNumber">House
                     <div class="form__input-wrap">
-                        <input type="text" name="house-number" id="house-number" placeholder="House number"
-                            class="form__house-number" required autocomplete="off">
+                        <input type="text" name="houseNumber" id="houseNumber" placeholder="House number"
+                            class="form__house-number" required min="0" pattern="^[0-9]+$"
+                            pattern-error-message="positive numbers only">
+                        <p class="on-error"></p>
                     </div>
                 </label>
-                <label for="apartment-number">Apartment
+                <label for="apartmentNumber">Apartment
                     <div class="form__input-wrap">
-                        <input type="text" name="apartment-number" id="apartment-number" placeholder="Apartment number"
-                            class="form__apartment-number" required autocomplete="off">
+                        <input type="text" name="apartmentNumber" id="apartmentNumber" placeholder="Apartment number"
+                            class="form__apartment-number" required pattern="^[1-9]+(-[0-9]+)?$"
+                            pattern-error-message="positive numbers only, shouldn't start with minus/dash symbol">
+                        <p class="on-error"></p>
                     </div>
                 </label>
             </div>
@@ -72,18 +82,20 @@
                 <h2 class="form__title">Choose 2 gifts (optional):</h2>
                 <div class="form__input-wrap--checkbox">
                     <label for="gift">
-                        <input type="checkbox" name="gift" id="gift" value="form-gift">pack as a gifts</label>
+                        <input type="checkbox" name="gift" id="gift" value="form-gift" class="checkbox">pack as a
+                        gifts</label>
 
                     <label for="postcard">add postcard
-                        <input type="checkbox" name="postcard" id="postcard" value="form-gift"></label>
+                        <input type="checkbox" name="postcard" id="postcard" value="form-gift" class="checkbox"></label>
                 </div>
                 <div class="form__input-wrap--checkbox">
                     <label for="discount">
-                        <input type="checkbox" name="discount" id="discount" value="form-gift">provide 2% discount for
+                        <input type="checkbox" name="discount" id="discount" value="form-gift" class="checkbox">provide
+                        2% discount for
                         the next purchase</label>
 
                     <label for="pen">branded pen or pencil
-                        <input type="checkbox" name="pen" id="pen" value="form-gift"></label>
+                        <input type="checkbox" name="pen" id="pen" value="form-gift" class="checkbox"></label>
                 </div>
             </div>
             <div class="form__comment">
@@ -95,7 +107,11 @@
             </div>
             <button class="form__submit-btn" type="submit">Purchase</button>
         </form>
+        <div class="summary-info">
+            <h3>Your order details:</h3>
+        </div>
     </section>
+    <script src="./js_partials/form.js"></script>
 </body>
 
 </html>

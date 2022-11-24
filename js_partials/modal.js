@@ -41,35 +41,25 @@ const cartModal = () => {
     modal: document.querySelector("[data-cart-info]"),
     body: document.querySelector("body"),
   };
+  const timeStamp = [];
+  refs.openModalBtn.addEventListener("click", onOpenModal);
 
-  refs.openModalBtn.addEventListener("click", toggleModal);
-  // refs.openModalBtn.removeEventListener("click", onOpenModal);
-  // console.log(refs.openModalBtn);
-  // console.dir(window);
-  refs.closeModalBtn.addEventListener("click", toggleModal);
+  refs.closeModalBtn.addEventListener("click", onCloseModal);
 
-  function toggleModal(e) {
-    // e.preventDefault();
-    console.log(e.currentTarget);
+  function onOpenModal(e) {
+    console.log(e.timeStamp);
+
+    // console.log(e.target);
+    // console.log(e.currentTarget);
     refs.modal.classList.toggle("is-hidden");
     refs.body.classList.toggle("no-scroll");
-    refs.openModalBtn.removeEventListener("click", toggleModal);
   }
 
-  // function onOpenModal(e) {
-  //   console.log(e.target);
-  //   console.log(e.currentTarget);
-  //   refs.modal.classList.toggle("is-hidden");
-  //   // refs.body.classList.toggle("no-scroll");
-  //   refs.openModalBtn.removeEventListener("click", onOpenModal);
-  // }
-
-  // function onCloseModal(e) {
-  //   console.log(e.target);
-  //   refs.modal.classList.toggle("is-hidden");
-  //   refs.body.classList.toggle("no-scroll");
-  //   refs.openModalBtn.removeEventListener("click", onOpenModal);
-  // }
+  function onCloseModal(e) {
+    console.log(e);
+    refs.modal.classList.toggle("is-hidden");
+    refs.body.classList.toggle("no-scroll");
+  }
 };
 
 export { infoModal, cartModal };
