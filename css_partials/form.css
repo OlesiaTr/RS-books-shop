@@ -25,6 +25,8 @@
 .form__title {
 }
 .form__input-wrap {
+  color: var(--main-dark-blue);
+  /* border: 2px solid var(--main-dark-blue); */
 }
 .form__input {
 }
@@ -66,3 +68,41 @@
   padding: 15px;
   width: 300px;
 }
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+::-webkit-calendar-picker-indicator {
+  padding: 3px;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+input[type="text"],
+input[type="date"] {
+  border: none;
+  border-bottom: 2px solid var(--main-dark-blue);
+  border-radius: 4px;
+}
+
+input.on-error {
+  border-bottom: 3px solid var(--accent-orange);
+}
+
+div.summary-info {
+  display: none;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+}
+
+/* .summary-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+} */

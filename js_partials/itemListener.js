@@ -44,12 +44,7 @@ function addBookToCart(book, cart) {
   if (!itemsInCart) cart.push(book);
   localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(cart));
 
-  // cartMarkup(cart);
-
-  cartRefs.btn.addEventListener("click", (e) => {
-    e.preventDefault();
-    cartMarkup(cart);
-  });
+  cartMarkup(cart);
 }
 
 export { onClick };
